@@ -123,3 +123,9 @@ Will run the video at 48 FPS. The default FPS is 60.
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
+
+Referencing The Project
+---
+If you like my code and you want to use it in your project, please refer it like this:
+
+`Amani, Sajjad. "Train an Autonomous Vehicle by CNN Deep Learning to Drive Like Humans." GitHub, 16 October 2019, https://github.com/Sj-Amani/Practical_Behavioral_Cloning`

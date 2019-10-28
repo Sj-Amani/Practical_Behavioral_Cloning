@@ -2,7 +2,7 @@
 
 #[![Demo Doccou alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
 
-![Auto_driving](output_images/PreProcessed_Image.png)
+![Auto_driving_gif](results/Behavioral_Cloning(10X).gif)
 
 ## Overview
 In this project, I will use CNN Deep Learnig to clone driving behavior. I will train, validate and test a model using Keras. The model will output a steering angle to an autonomous vehicle.

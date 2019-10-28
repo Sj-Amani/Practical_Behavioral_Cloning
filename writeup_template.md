@@ -1,7 +1,5 @@
 # Practical Behavioral Cloning
 
-#[![Demo Doccou alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
-
 ![Auto_driving_gif](results/Behavioral_Cloning(10X).gif)
 
 ## Overview

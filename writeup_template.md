@@ -1,35 +1,26 @@
-# **Behavioral Cloning** 
+# Practical Behavioral Cloning
 
-## Writeup Template
+#[![Demo Doccou alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
 
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+![Auto_driving](output_images/PreProcessed_Image.png)
 
----
+## Overview
+In this project, I will use CNN Deep Learnig to clone driving behavior. I will train, validate and test a model using Keras. The model will output a steering angle to an autonomous vehicle.
 
-**Behavioral Cloning Project**
+I am using a [simulator](https://github.com/udacity/self-driving-car-sim) - Version 1, 12/09/16 - where you can steer a car around a track for data collection. You'll use image data and steering angles to train a neural network and then use this model to drive the car autonomously around the track.
 
+## Goals
 The goals / steps of this project are the following:
 * Use the simulator to collect data of good driving behavior
-* Build, a convolution neural network in Keras that predicts steering angles from images
-* Train and validate the model with a training and validation set
-* Test that the model successfully drives around track one without leaving the road
-* Summarize the results with a written report
+* Build, a convolution neural network in Keras that predicts steering angles from images (model.py)
+* Train and validate the model with a training and validation set (model.py)
+* Test that the model successfully drives around track one without leaving the road (drive.py)
+* Summarize the results with a written report (this README.md file)
+* video.mp4 (a video recording of my vehicle driving autonomously around the track for one full lap)
 
+By continuing to read this README file, I will describes how to output the final video.mp4.
 
-[//]: # (Image References)
-
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
-
-## Rubric Points
-### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
-
----
+--
 ### Files Submitted & Code Quality
 
 #### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
@@ -127,3 +118,9 @@ After the collection process, I had X number of data points. I then preprocessed
 I finally randomly shuffled the data set and put Y% of the data into a validation set. 
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+
+Referencing The Project
+---
+If you like my code and you want to use it in your project, please refer it like this:
+
+`Amani, Sajjad. "Train an Autonomous Vehicle by CNN Deep Learning to Drive Like Humans." GitHub, 16 October 2019, https://github.com/Sj-Amani/Practical_Behavioral_Cloning`

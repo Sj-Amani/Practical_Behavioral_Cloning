@@ -19,19 +19,29 @@ The goals / steps of this project are the following:
 By continuing to read this README file, I will describes how to output the final video.mp4.
 
 ## Dependencies
-* Python 3
+* python 3
+* numpy
+* matplotlib
+* Pickle
+* pillow (PIL)
+* scikit-learn
+* h5py
+* Pickle
 * TensorFlow
 * Keras
-* PIL
-* Numpy
-* h5py
-* Scikit Learn
-* Pickle
 * [simulator](https://github.com/udacity/self-driving-car-sim)
 
-`environment.yml` shows the exact environment that I used here. Please note the for using GPU you need to have some initial preparations which are not in the scope of this writeup.
+`environment.yml` shows the exact environment that I used here. Please note the for using GPU you need to do some initial preparations which are not in the scope of this writeup.
 If you want to know how to set up the GPU environment, I highly recommend to use the Docker's images! [This](https://blog.amedama.jp/entry/2017/04/03/235901) is a good starting point.
 Also, if you need more help, please don't hesitate to contact me! I'll do my best to come back to you quickly.
+
+## How to run this project
+
+Run `python drive.py model.json` in a terminal and then, you need to run the [simulator](https://github.com/udacity/self-driving-car-sim) and choose the `AUTONOMOUS MODE`. 
+
+![simulator-autonomous](results/Simulator-Autonomous.png)
+
+You will see the car will start to move like the gif video provided on the top of this page.
 
 --
 ### Files Submitted & Code Quality

@@ -1,11 +1,12 @@
 #!/bin/sh
 
 # directory of the behavioral cloning package on your local pc/laptop/AWS 
-dir_workspace=/home/s-amani/Desktop/Resesarch/Udacity/Self_Driving_Car_Engineer_Nanodegree/03-Projects/P04/Practical_Behavioral_Cloning  		# the directory where this package is in it
+dir_workspace=/home/Practical_Behavioral_Cloning			# the directory where this package is in it
+
 # directories of the camera images for left/middle/right driving
-dir_left_side_driving=/home/s-amani/Desktop/Resesarch/Udacity/Self_Driving_Car_Engineer_Nanodegree/03-Projects/P04/Practical_Behavioral_Cloning/left		# the directory to the recorded left side driving data
-dir_middle_side_driving=/home/s-amani/Desktop/Resesarch/Udacity/Self_Driving_Car_Engineer_Nanodegree/03-Projects/P04/Practical_Behavioral_Cloning/middle		# the directory to the recorded middle side driving data
-dir_right_side_driving=/home/s-amani/Desktop/Resesarch/Udacity/Self_Driving_Car_Engineer_Nanodegree/03-Projects/P04/Practical_Behavioral_Cloning/right		# the directory to the recorded right side driving data
+dir_left_side_driving=/home/Practical_Behavioral_Cloning/left		# the directory to the recorded left side driving data
+dir_middle_side_driving=/home/Practical_Behavioral_Cloning/middle	# the directory to the recorded middle side driving data
+dir_right_side_driving=/home/Practical_Behavioral_Cloning/right		# the directory to the recorded right side driving data
 
 
 cd $dir_middle_side_driving

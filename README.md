@@ -44,10 +44,10 @@ Run `python drive.py model.json` in a terminal and then, you need to run the [si
 
 Then, you will see the car will start to move like the gif video provided on the top of this page.
 
---
-### Project Explanation
 
-#### 1. Main Files
+## Project Explanation
+
+### 1. Main Files
 
 My project includes the following files:
 * make_data_for_training.sh containing the script to preprocess all the data and make the data for training
@@ -57,7 +57,7 @@ My project includes the following files:
 * README.md as a complete report
 
 
-#### 2. How to create and train your own model and run it
+### 2. How to create and train your own model and run it
 1. Run the provided Udacity [simulator](https://github.com/udacity/self-driving-car-sim) and select training mode to run the car:
 
 ![simulator-training](results/Simulator-Training.png)
@@ -70,19 +70,19 @@ Infront of this car, three cameras are located which are recording the images in
 Where `X` shows the car and `\|/` shows the camera direction in lef, center, and right, respectively.
 
 2. Save the driving images data for these cases at least for one round:
-	- Left driving:		|| X | - | - ||  --> I did one round!
-	- Middle driving:	|| - | X | - ||  --> I did two rounds!
-	- Right driving:	|| - | - | X ||  --> I did one round!
+	- Left   driving:	|| x | - | - ||  --> I did one round!
+	- Middle driving:       || - | x | - ||  --> I did two rounds!
+	- Right  driving:	|| - | - | x ||  --> I did one round!
+
 `X` shows the car location in the road `|| ... ||`. 
+
 For more understanding, I've provided these images for each case:
 
-Left driving:
+
 ![left_driving](results/Left_Driving.png)
 
-Middle driving:
 ![middle_driving](results/Middle_Driving.png)
 
-Right driving:
 ![right_driving](results/Right_Driving.png)
 
 
@@ -97,29 +97,27 @@ Right driving:
 4. Run `python model.py` to creat train the CNN model.
 5. Run `python drive.py model.json` in a terminal and then, you need to run the simulator and choose the `AUTONOMOUS MODE`. Then, you will see the car will start to move like.
 
-#### 3. How the code here has preprocessed the collected data?
+
+### 3. How to preprocessed the collected data?
 
 One of the best ways to to add useful information to train your model is data augmentation. Here, I do the the data augmentation by flipping the images horizontally and inverting the related steering angles. This will double the data size and reduces any bias towards turning left/right.
 
-Right Driving Flipped Data
 ![right_driving_flipped](results/Right_Driving_Flipped.png)
 
-After that, do the following for: 
-	-Middel side driving data: Keep the center labled images and correct the steering angle for the right/left labled images  by -+0.15 to keep the car in the middle of the road for small deviations. Finally, we smooth the steering angle over time using a moving average function to avoid sharp changes during the auto mode.
+After that, do the following for:
+	- Middel side driving data: Keep the center labled images and correct the steering angle for the right/left labled images  by -+0.15 to keep the car in the middle of the road for small deviations. Finally, we smooth the steering angle over time using a moving average function to avoid sharp changes during the auto mode.
 	
-	-Right/Left side driving data: Remove the center labeled images and images whose steering angle is zero. Then correct the steering angle for the right/left labled images  by adding -+0.5 to keep the car to turn to the middle of the road in case of passing the road side lines. Finally, we smooth the steering angle over time using a moving average function to avoid sharp changes during the auto mode.
+	- Right/Left side driving data: Remove the center labeled images and images whose steering angle is zero. Then correct the steering angle for the right/left labled images  by adding -+0.5 to keep the car to turn to the middle of the road in case of passing the road side lines. Finally, we smooth the steering angle over time using a moving average function to avoid sharp changes during the auto mode.
 	
 
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
-
-#### 4. Model Architecture and Training Strategy
+### 4. Model Architecture and Training Strategy
 There has been prior work done to predict vehicle steering angles from camera images, such as NVIDIA's "End to End Learning for Self-Driving Cars" (http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf), and comma.ai's steering angle prediction model (https://github.com/commaai/research/blob/master/train_steering_model.py). Here, I used the comma.ai's steering angle prediction model.
 
-##### Model Architecture
+#### Model Architecture
 The CNN model that I used here has the following layers and information:
 
 Layer (type)                 Output Shape              Param #   
-=================================================================
+-----------------------------------------------------------------
 lambda_1 (Lambda)            (None, 160, 320, 3)       0         
 Scale all image pixel values 
 within the range [-1, 1]
@@ -152,27 +150,27 @@ _________________________________________________________________
 elu_4 (ELU)                  (None, 512)               0         
 _________________________________________________________________
 dense_2 (Dense)              (None, 1)                 513       
-=================================================================
+-----------------------------------------------------------------
 Total params: 6,621,809
 Trainable params: 6,621,809
 Non-trainable params: 0
 
 The model follows the standard design practice for CNNs: the base convolutional layers' height and width progressively decrease while its depth increases, and the final layers are a series of fully-connected layers. Dropout layers were included right before the fully-connected layers, to help reduce overfitting.
 
-##### Training Strategy
+#### Training Strategy
 Validating Your Network:
 In order to validate your network, you need to compare model performance on the training set and a validation set. The validation set should contain image and steering data that was not used for training. A rule of thumb could be to use 80% of your data for training and 20% for validation or 70% and 30%. But here, because of small model size, I used 90% of your data for training and 10% for validation. Also, randomly shuffle the data before splitting into training and validation sets is a good practice.
 
 If model predictions are poor on both the training and validation set (for example, mean squared error is high on both), then this is evidence of underfitting. Possible solutions could be to:
 
-	* increase the number of epochs
-	* add more convolutions to the network.
+* increase the number of epochs
+* add more convolutions to the network.
 
 When the model predicts well on the training set but poorly on the validation set (for example, low mean squared error for training set, high mean squared error for validation set), this is evidence of overfitting. If the model is overfitting, a few ideas could be to
 
-	* use dropout or pooling layers
-	* use fewer convolution or fewer fully connected layers
-	* collect more data or further augment the data set
+* use dropout or pooling layers
+* use fewer convolution or fewer fully connected layers
+* collect more data or further augment the data set
 
 Ideally, the model will make good predictions on both the training and validation sets. The implication is that when the network sees an image, it can successfully predict what angle was being driven at that moment.
 

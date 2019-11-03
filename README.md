@@ -53,9 +53,9 @@ My project includes the following files:
 * make_data_for_training.sh containing the script to preprocess all the data and make the data for training
 * model.py containing the script to create and train the model
 * drive.py for driving the car in autonomous mode
-* model.h5 containing a trained convolution neural network 
+* model.h5 containing a trained convolution neural network
+* video.mp4 which is in the `results` directory. The `video(10X).mp4` is much faster and has ~3MB size. 
 * README.md as a complete report
-* video.mp4 which is in the `results` directory. The `video(10X).mp4` is much faster and has ~3MB size.
 
 
 ### 2. How to create and train your own model and run it

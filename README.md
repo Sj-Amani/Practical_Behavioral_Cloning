@@ -191,8 +191,8 @@ Non-trainable params: 0
 The model follows the standard design practice for CNNs: the base convolutional layers' height and width progressively decrease while its depth increases, and the final layers are a series of fully-connected layers. Dropout layers were included right before the fully-connected layers, to help reduce overfitting.
 
 #### Training Strategy
-Validating Your Network:
-In order to validate your network, you need to compare model performance on the training set and a validation set. The validation set should contain image and steering data that was not used for training. A rule of thumb could be to use 80% of your data for training and 20% for validation or 70% and 30%. But here, because of small model size, I used 90% of your data for training and 10% for validation. Also, randomly shuffle the data before splitting into training and validation sets is a good practice.
+Validating The Network:
+In order to validate the network, you need to compare model performance on the training set and a validation set. The validation set should contain image and steering data that was not used for training. A rule of thumb could be to use 80% of your data for training and 20% for validation or 70% and 30%. But here, because of small data size, I used 90% of the data for training and 10% for validation. Also, randomly shuffle the data before splitting into training and validation sets is a good practice.
 
 If model predictions are poor on both the training and validation set (for example, mean squared error is high on both), then this is evidence of underfitting. Possible solutions could be to:
 
@@ -222,14 +222,14 @@ Regularization:
 The comma.ai model specified dropout layers and their associated drop probabilities used here.
 
 
-Loss results:
+Loss Results:
 For training the model, the epochs number and batch size were 10 and 16, repectively. During the training, the training and validation loss calculations show a decreasing trend:
 
 ![loss_results](results/loss_results.png)
 
 
-Testing Your Network:
-Once you're satisfied that the model is making good predictions on the training and validation sets, you can test your model by launching the simulator and entering autonomous mode. For testing, I just test the model on the simulator but you can define a test model for your self if you want. Please note that durig the test, if your model has low mean squared error on the training and validation sets but is driving off the track, this could be because of the data collection process. It's important to feed the network examples of good driving behavior so that the vehicle stays in the center and recovers when getting too close to the sides of the road.
+Testing The Network:
+Once we're satisfied that the model is making good predictions on the training and validation sets, we can test the model by launching the simulator and entering autonomous mode. For testing, I just test the model on the simulator but you can define a test model for your self if you want. Please note that during the test, if your model has low mean squared error on the training and validation sets but is driving off the track, this could be because of the data collection process. It's important to feed the network examples of good driving behavior so that the car stays in the center and recovers when getting too close to the sides of the road.
 
 
 References:

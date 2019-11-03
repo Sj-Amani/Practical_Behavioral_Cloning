@@ -70,9 +70,9 @@ Infront of this car, three cameras are located which are recording the images in
 Where `X` shows the car and `\|/` shows the camera direction in lef, center, and right, respectively.
 
 2. Save the driving images data for these cases at least for one round:
-	- Left   driving:	- || x | - | - ||  --> I did one round!
-	- Middle driving:	- || - | x | - ||  --> I did two rounds!
-	- Right  driving:	- || - | - | x ||  --> I did one round!
+	- || x | - | - || : Left driving (I did one round)
+	- || - | x | - || : Middle driving (I did two rounds)
+	- || - | - | x || : Right driving (I did one round)
 
 `X` shows the car location in the road `|| ... ||`. 
 
@@ -113,7 +113,7 @@ After that, do the following for:
 	
 
 ### 4. Model Architecture and Training Strategy
-There has been prior work done to predict vehicle steering angles from camera images, such as NVIDIA's "End to End Learning for Self-Driving Cars" (http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf), and comma.ai's steering angle prediction model (https://github.com/commaai/research/blob/master/train_steering_model.py). Here, I used the comma.ai's steering angle prediction model.
+There has been prior work done to predict vehicle steering angles from camera images, such as NVIDIA's "End to End Learning for Self-Driving Cars", and comma.ai's steering angle prediction model. Here, I used the comma.ai's steering angle prediction model.
 
 #### Model Architecture
 The CNN model that I used here has the following layers and information:
@@ -242,6 +242,10 @@ https://github.com/georgesung/behavioral_cloning
 https://classroom.udacity.com/nanodegrees
 
 https://arxiv.org/abs/1412.6980v8
+
+http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf
+
+https://github.com/commaai/research/blob/master/train_steering_model.py
 
 
 Referencing This Project

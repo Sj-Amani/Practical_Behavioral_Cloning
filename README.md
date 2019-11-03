@@ -1,6 +1,6 @@
 # Practical Behavioral Cloning
 
-![Auto_driving_gif](results/Behavioral_Cloning(10X).gif)
+![Auto_driving_gif](results/video(10X).gif)
 
 ## Overview
 In this project, I will use CNN Deep Learnig to clone driving behavior. I will train, validate and test a model using Keras. The model will output a steering angle to an autonomous vehicle.
@@ -55,6 +55,7 @@ My project includes the following files:
 * drive.py for driving the car in autonomous mode
 * model.h5 containing a trained convolution neural network 
 * README.md as a complete report
+* video.mp4 which is in `results` directory. The `video(10X).mp4` is much faster and has ~3MB size.
 
 
 ### 2. How to create and train your own model and run it

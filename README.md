@@ -70,9 +70,9 @@ Infront of this car, three cameras are located which are recording the images in
 Where `X` shows the car and `\|/` shows the camera direction in lef, center, and right, respectively.
 
 2. Save the driving images data for these cases at least for one round:
-	- Left   driving:	|| x | - | - ||  --> I did one round!
-	- Middle driving:       || - | x | - ||  --> I did two rounds!
-	- Right  driving:	|| - | - | x ||  --> I did one round!
+	- Left   driving:	- || x | - | - ||  --> I did one round!
+	- Middle driving:	- || - | x | - ||  --> I did two rounds!
+	- Right  driving:	- || - | - | x ||  --> I did one round!
 
 `X` shows the car location in the road `|| ... ||`. 
 
@@ -105,9 +105,11 @@ One of the best ways to to add useful information to train your model is data au
 ![right_driving_flipped](results/Right_Driving_Flipped.png)
 
 After that, do the following for:
-	- Middel side driving data: Keep the center labled images and correct the steering angle for the right/left labled images  by -+0.15 to keep the car in the middle of the road for small deviations. Finally, we smooth the steering angle over time using a moving average function to avoid sharp changes during the auto mode.
+
+* Middel side driving data: Keep the center labled images and correct the steering angle for the right/left labled images  by -+0.15 to keep the car in the middle of the road for small deviations. Finally, we smooth the steering angle over time using a moving average function to avoid sharp changes during the auto mode.
+
 	
-	- Right/Left side driving data: Remove the center labeled images and images whose steering angle is zero. Then correct the steering angle for the right/left labled images  by adding -+0.5 to keep the car to turn to the middle of the road in case of passing the road side lines. Finally, we smooth the steering angle over time using a moving average function to avoid sharp changes during the auto mode.
+* Right/Left side driving data: Remove the center labeled images and images whose steering angle is zero. Then correct the steering angle for the right/left labled images  by adding -+0.5 to keep the car to turn to the middle of the road in case of passing the road side lines. Finally, we smooth the steering angle over time using a moving average function to avoid sharp changes during the auto mode.
 	
 
 ### 4. Model Architecture and Training Strategy
@@ -180,7 +182,9 @@ dense_2 (Dense)              (None, 1)                 513
 -----------------------------------------------------------------
 
 Total params: 6,621,809
+
 Trainable params: 6,621,809
+
 Non-trainable params: 0
 
 The model follows the standard design practice for CNNs: the base convolutional layers' height and width progressively decrease while its depth increases, and the final layers are a series of fully-connected layers. Dropout layers were included right before the fully-connected layers, to help reduce overfitting.
@@ -230,9 +234,13 @@ Once you're satisfied that the model is making good predictions on the training 
 References:
 ---
 https://github.com/PaulHeraty/BehaviouralCloning
+
 http://stackoverflow.com/a/14314054
+
 https://github.com/georgesung/behavioral_cloning
+
 https://classroom.udacity.com/nanodegrees
+
 https://arxiv.org/abs/1412.6980v8
 
 

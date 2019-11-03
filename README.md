@@ -249,7 +249,7 @@ http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-
 https://github.com/commaai/research/blob/master/train_steering_model.py
 
 
-Referencing This Project
+How Referencing This Project
 ---
 If you like my code and you want to use it in your project, please refer it like this:
 

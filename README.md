@@ -55,7 +55,7 @@ My project includes the following files:
 * drive.py for driving the car in autonomous mode
 * model.h5 containing a trained convolution neural network 
 * README.md as a complete report
-* video.mp4 which is in `results` directory. The `video(10X).mp4` is much faster and has ~3MB size.
+* video.mp4 which is in the `results` directory. The `video(10X).mp4` is much faster and has ~3MB size.
 
 
 ### 2. How to create and train your own model and run it

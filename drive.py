@@ -15,7 +15,7 @@ from io import BytesIO
 from keras.models import model_from_json
 from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array
 import tensorflow as tf
-#tf.python.control_flow_ops = tf  # bug workaround (for dropout): http://stackoverflow.com/a/40066895
+#tf.python.control_flow_ops = tf
 tf.python_io.control_flow_ops = tf
 
 sio = socketio.Server()
